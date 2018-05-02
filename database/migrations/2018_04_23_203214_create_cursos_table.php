@@ -16,16 +16,15 @@ class CreateCursosTable extends Migration
         Schema::create('cursos', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id_cursos')->comment('Numero de curso');
-            $table->string('clave_materia');//De aqui puedo traer horas de laboratorio
-            $table->string('id_hora');
-            $table->string('id_salon');
+            $table->integer('id_materia')->unsigned();//De aqui puedo traer horas de laboratorio
+            $table->string('hora');
+            $table->integer('id_salon')->unsigned();
             $table->boolean('ingles');
             $table->boolean('honors');
             $table->timestamps();
 
-            $table->foreign('clave_materia')->references('clave')->on('materias')->onDelete('cascade');
-            $table->foreign('id_hora')->references('hora')->on('horarios')->onDelete('cascade');
-            $table->foreign('id_salon')->references('numSalon')->on('salones')->onDelete('cascade');  
+            $table->foreign('id_materia')->references('id')->on('materias')->onDelete('cascade');
+            $table->foreign('id_salon')->references('id')->on('salones')->onDelete('cascade');  
         });
     }
 

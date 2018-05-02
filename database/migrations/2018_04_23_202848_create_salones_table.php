@@ -15,9 +15,10 @@ class CreateSalonesTable extends Migration
     {
         Schema::create('salones', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->string('numSalon')->unique()->primary()->comment('Numero de salon');
+            $table->increments('id');
+            $table->string('numSalon')->unique()->comment('Numero de salon');
             $table->integer('capacidad');
-            $table->string('admnistrado')->comment('Que departamento lo administra');
+            $table->string('admin')->comment('Que departamento lo administra');
             $table->timestamps();
         });
     }

@@ -15,7 +15,8 @@ class CreateMateriasTable extends Migration
     {
         Schema::create('materias', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->string('clave')->unique()->primary();
+            $table->increments('id');
+            $table->string('clave')->unique();
             $table->string('nombre');
             $table->string('laboratorio')->nullable()->comment('Horas de laboratorio');
             $table->timestamps();

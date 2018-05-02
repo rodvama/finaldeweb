@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+//Login y registrar
+Auth::routes();
+Route::get('/', 'HomeController@index')->name('home');
+
+//Maestros
+Route::get('/maestros', 'MaestroController@index');
+Route::post('/maestros/guardar', 'MaestroController@guardar');
+Route::put('/maestros/actualizar/{maestro}','MaestroController@actualizar');
+Route::delete('/maestros/eliminar/{maestro}', 'MaestroController@eliminar');
+
+//Salones
+Route::get('/salones', 'SalonesController@index');
+Route::post('/salones/guardar', 'SalonesController@guardar');
+Route::put('/salones/actualizar/{salon}','SalonesController@actualizar');
+Route::delete('/salones/eliminar/{salon}', 'SalonesController@eliminar');

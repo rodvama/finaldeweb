@@ -15,10 +15,11 @@ class CreateMaestrosTable extends Migration
     {
         Schema::create('maestros', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->string('nomina')->unique()->primary();
+            $table->increments('id');
+            $table->string('nomina')->unique();
             $table->string('nombre');
             $table->string('telefono')->nullable();
-            $table->integer('numCursos')->comment('Numero de cursos que programados este semestre');
+            $table->integer('numCursos')->comment('Numero de cursos que programados este semestre')->nullable();
             $table->timestamps();
         });
     }

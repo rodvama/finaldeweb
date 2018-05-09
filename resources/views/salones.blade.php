@@ -38,10 +38,19 @@
 		<form id="myForm">
 			<p>Numero de salon:</p>
 			<input type="text" name="numSalon">
-			<p>Cantidad:</p>
+			<p>Capacidad:</p>
 			<input type="number" name="capacidad">
 			<p>Admnistrado por:</p>
-			<input type="text" name="admin">
+			<select name="admin">
+				<option value="" disabled selected>Choose your option</option>
+			<?php
+                $maestros = \App\maestro::all()
+				?>
+				@foreach($maestros as $maestro)
+					<option value="{{$maestro->id}}">{{$maestro->nombre}}</option>
+				@endforeach
+			</select>
+			<br><br>
 			<button class="btn waves-effect waves-light" type="submit" name="action" onclick="subirSalon()">Submit<i class="material-icons right">send</i></button>
 		</form>
 	</div>
@@ -50,4 +59,5 @@
 
 @section('scripts'){{-- Se abre la seccion de scripts para agregar javascript especifico a cada vista --}}
 	<script src="{{asset('js/salon.js')}}"></script>
+	<script src="{{asset('js/maestro.js')}}"></script>
 @endsection

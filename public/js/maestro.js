@@ -65,7 +65,7 @@ function guardarMaestro(id)
 {
 	$('#guardar-' + id).hide();
 
-	var contenido = new Array('3');
+	var contenido = new Array('4');
 	var cont = 0;
 
 	$('textarea#area' + id).each(function() {
@@ -80,6 +80,7 @@ function guardarMaestro(id)
 		nombre: contenido[0],
 		nomina: contenido[1],
 		telefono: contenido[2],
+		email: contenido[3]
 	};
 
 	//mediante este ajax guardamos los cambios hechos

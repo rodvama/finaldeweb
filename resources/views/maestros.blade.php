@@ -14,6 +14,7 @@
 					<td><h3>Nombre</h3></td>
 					<td><h3>Nomina</h3></td>
 					<td><h3>Telefono</h3></td>
+					<td><h3>Correo</h3></td>
 				</tr>
 			</thead>
 			<tbody id="newRow">
@@ -22,6 +23,7 @@
 						<td class="{{$maestro->id}}">{{$maestro->nombre}}</td>
 						<td class="{{$maestro->id}}">{{$maestro->nomina}}</td>
 						<td class="{{$maestro->id}}">{{$maestro->telefono}}</td>
+						<td class="{{$maestro->id}}">{{$maestro->email}}</td>
 						<td>
 							<button class="btn" id="editar-{{$maestro->id}}" onclick="editarMaestro('{{$maestro->id}}')">Editar</button>
 							<button class="btn" id="guardar-{{$maestro->id}}" style="display: none" onclick="guardarMaestro('{{$maestro->id}}')">Guardar</button>
@@ -42,6 +44,8 @@
 			<input type="text" name="nombre">
 			<p>Telefono</p>
 			<input type="number" name="telefono">
+			<p>Correo</p>
+			<input type="email" name="correo">
 			<button class="btn waves-effect waves-light" type="submit" name="action" onclick="subirMaestro()">Submit<i class="material-icons right">send</i></button>
 		</form>
 	</div>

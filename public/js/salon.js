@@ -1,4 +1,4 @@
-function subirSalon(){//Para dar de alta maestro en la base de datos, mediante ajax
+function subirSalon(){//Para dar de alta salon en la base de datos, mediante ajax
 
 	$.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 

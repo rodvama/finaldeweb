@@ -19,6 +19,7 @@ class CreateMaestrosTable extends Migration
             $table->string('nomina')->unique();
             $table->string('nombre');
             $table->string('telefono')->nullable();
+            $table->string('email')->nullable();
             $table->integer('numCursos')->comment('Numero de cursos que programados este semestre')->nullable();
             $table->timestamps();
         });

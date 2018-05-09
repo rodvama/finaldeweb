@@ -26,7 +26,7 @@ class MaestroController extends Controller
 
         if ($ma === null) {//si no existe lo creamos con la info recibida Tambien se guarda en la base de datos
             $maestro = maestro::create(request([
-        	   'nomina', 'nombre', 'telefono'
+        	   'nomina', 'nombre', 'telefono', 'email'
             ]));
         
             return response()->json([//regresamos json con datos que se guardaron
@@ -35,7 +35,8 @@ class MaestroController extends Controller
                     'id' => $maestro->id,
                     'nomina' => $maestro->nomina,
                     'nombre' => $maestro->nombre,
-                    'telefono'=> $maestro->telefono
+                    'telefono'=> $maestro->telefono,
+                    'email' => $maestro->email
                 ]
             ]);
         }
@@ -57,6 +58,7 @@ class MaestroController extends Controller
         //Hacemos los cambios 
         $maestro->nombre = $request->nombre;
         $maestro->telefono = $request->telefono;
+        $maestro->email = $request->email;
 
         //Si la nomina del maestro no existe, hacer cambio y mandar true
         if ($ma === null) {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\salones;
+use App\maestro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

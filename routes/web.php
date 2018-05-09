@@ -35,3 +35,6 @@ Route::get('/grupos', 'GruposController@index');
 Route::post('/grupos/guardar', 'GruposController@guardar');
 Route::put('/grupos/actualizar/{grupo}','GruposController@actualizar');
 Route::delete('/grupos/eliminar/{grupo}', 'GruposController@eliminar');
+
+//Reportes
+Route::get('/reportes', 'ReportesController@index');

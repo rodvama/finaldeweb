@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jessicamcavazoserhard
- * Date: 5/8/18
- * Time: 8:18 PM
- */
-
 @extends('layouts.app'){{-- Usar este template para todos los front end --}}
 
 {{-- Descomentar lo de abajo para agregar style especifico para cada view --}}
@@ -19,25 +11,29 @@
     </div>
 
     <div class="row-fluid">
-        <h1>Salones de Maestro</h1>
+        <h3>Salones de Maestro</h3>
         <form id="salonDeMaestro">
             <p>Nombre del maestro:</p>
             <input type="text" name="maestro">
             <button class="btn waves-effect waves-light" type="submit" name="action" onclick="salonesDeMaestro()">Submit<i class="material-icons right">send</i></button>
         </form>
     </div>
+    <br>
+    <br>
 
     <div class="row-fluid">
-        <h1>Grupos de Materia</h1>
+        <h3>Grupos de Materia</h3>
         <form id="gruposDeMateria">
             <p>Nombre de materia:</p>
             <input type="text" name="materia">
             <button class="btn waves-effect waves-light" type="submit" name="action" onclick="gruposDeMateria()">Submit<i class="material-icons right">send</i></button>
         </form>
     </div>
+    <br>
+    <br>
 
     <div class="row-fluid">
-        <h1>Disponibilidad de Salones</h1>
+        <h3>Disponibilidad de Salones</h3>
         <form id="salonEnHorario">
             <p>Horario:</p>
             <select>
@@ -64,9 +60,11 @@
             <button class="btn waves-effect waves-light" type="submit" name="action" onclick="salonEnHorario()">Submit<i class="material-icons right">send</i></button>
         </form>
     </div>
+    <br>
+    <br>
 
         <div class="row-fluid">
-            <h1>Profesores Disponibles</h1>
+            <h3>Profesores Disponibles</h3>
             <form id="profesorDisponibleEnHorario">
                 <p>Horario:</p>
                 <select>
@@ -93,9 +91,11 @@
                 <button class="btn waves-effect waves-light" type="submit" name="action" onclick="profesorDisponibleEnHorario()">Submit<i class="material-icons right">send</i></button>
             </form>
         </div>
+    <br>
+    <br>
 
     <div class="row-fluid">
-        <h1>Profesores en clase</h1>
+        <h3>Profesores en clase</h3>
         <form id="profesorNoDisponibleEnHorario">
             <p>Horario:</p>
             <select>
@@ -122,9 +122,11 @@
             <button class="btn waves-effect waves-light" type="submit" name="action" onclick="profesorNoDisponibleEnHorario()">Submit<i class="material-icons right">send</i></button>
         </form>
     </div>
+    <br>
+    <br>
 
     <div class="row-fluid">
-        <h1>Clases en Horario</h1>
+        <h3>Clases en Horario</h3>
         <form id="claseEnHorario">
             <p>Horario:</p>
             <select>
@@ -151,6 +153,8 @@
             <button class="btn waves-effect waves-light" type="submit" name="action" onclick="claseEnHorario()">Submit<i class="material-icons right">send</i></button>
         </form>
     </div>
+    <br>
+    <br>
 </div>
 @endsection{{--Terminamos la section de contenido--}}
 

@@ -15,6 +15,9 @@
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
+//Materias
+Route::get('/materias', 'MateriasController@index');
+
 //Maestros
 Route::get('/maestros', 'MaestroController@index');
 Route::post('/maestros/guardar', 'MaestroController@guardar');
@@ -26,3 +29,9 @@ Route::get('/salones', 'SalonesController@index');
 Route::post('/salones/guardar', 'SalonesController@guardar');
 Route::put('/salones/actualizar/{salon}','SalonesController@actualizar');
 Route::delete('/salones/eliminar/{salon}', 'SalonesController@eliminar');
+
+//Grupos
+Route::get('/grupos', 'GruposController@index');
+Route::post('/grupos/guardar', 'GruposController@guardar');
+Route::put('/grupos/actualizar/{grupo}','GruposController@actualizar');
+Route::delete('/grupos/eliminar/{grupo}', 'GruposController@eliminar');

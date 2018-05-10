@@ -13,7 +13,6 @@
 				<tr>
 					<td><h3>Clave</h3></td>
 					<td><h3>Nombre</h3></td>
-					<td><h3>Laboratorio</h3></td>
 				</tr>
 			</thead>
 			<tbody id="newRow">
@@ -21,7 +20,6 @@
 					<tr id="materia-{{$materia->id}}">
 						<td class="{{$materia->id}}">{{$materia->clave}}</td>
 						<td class="{{$materia->id}}">{{$materia->nombre}}</td>
-						<td class="{{$materia->id}}">{{$materia->laboratorio}}</td>
 					</tr>
 				@endforeach
 			</tbody>

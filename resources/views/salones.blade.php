@@ -41,15 +41,7 @@
 			<p>Capacidad:</p>
 			<input type="number" name="capacidad">
 			<p>Admnistrado por:</p>
-			<select name="admin">
-				<option value="" disabled selected>Choose your option</option>
-			<?php
-                $maestros = \App\maestro::all()
-				?>
-				@foreach($maestros as $maestro)
-					<option value="{{$maestro->id}}">{{$maestro->nombre}}</option>
-				@endforeach
-			</select>
+			<input type="text" name="admin">
 			<br><br>
 			<button class="btn waves-effect waves-light" type="submit" name="action" onclick="subirSalon()">Submit<i class="material-icons right">send</i></button>
 		</form>

@@ -28,7 +28,7 @@
 						<td class="{{$grupo->id}}">{{$grupo->clave}}</td>
 						<td class="{{$grupo->id}}">{{$grupo->numGrupo}}</td>
 						<td class="{{$grupo->id}}">{{$grupo->horario}}</td>
-            <td class="{{$grupo->id}}">{{$grupo->c}}</td>
+            <td class="{{$grupo->id}}">{{$grupo->laboratorio}}</td>
 						<td class="{{$grupo->id}}">{{$grupo->salon}}</td>
 						<td class="{{$grupo->id}}">{{$grupo->profesor}}</td>
             <td class="{{$grupo->id}}">{{$grupo->responsabilidad}}</td>
@@ -48,18 +48,81 @@
 	<div class="row-fluid">
 		<h1>Subir Grupo</h1>
 		<form id="myForm">
-			<p>Clave de materia:</p>
-			<input type="text" name="clave">
+			<p>Materia:</p>
+			 <select class="browser-default" name="clave">
+			 	<option value="" disabled selected>Escoja el horario desado:</option>
+        @foreach($materias as $materia)
+        	<option value="{{$materia->clave}}">{{$materia->nombre}}</option>
+        @endforeach
+      </select>
+      <br>
 			<p>Número de grupo:</p>
 			<input type="number" name="numGrupo">
+			<p>Profesor:</p>
+			<select class="browser-default" name="profesor">
+      	<option value="" disabled selected>Escoja el maestro deseado:</option>
+        @foreach($maestros as $maestro)
+          <option value="{{$maestro->nombre}}">{{$maestro->nombre}}</option>
+        @endforeach
+      </select>
+      <br>
 			<p>Horario:</p>
-			<input type="text" name="horario">
+			<select class="browser-default" name="horario">
+				<option value="" disabled selected>Escoja el horario desado:</option>
+        <option value="7/3 LuJu">7/3 LuJu</option>
+        <option value="8+/3 LuJu">8+/3 LuJu</option>
+        <option value="10/3 LuJu">10/3 LuJu</option>
+        <option value="11+/3 LuJu">11+/3 LuJu</option>
+        <option value="1/3 LuJu">1/3 LuJu</option>
+        <option value="2+/3 LuJu">2+/3 LuJu</option>
+        <option value="4/3 LuJu">4/3 LuJu</option>
+        <option value="7/3 MaVi">7/3 MaVi</option>
+        <option value="8+/3 MaVi">8+/3 MaVi</option>
+        <option value="10/3 MaVi">10/3 MaVi</option>
+        <option value="11+/3 MaVi">11+/3 MaVi</option>
+        <option value="1/3 MaVi">1/3 MaVi</option>
+        <option value="2+/3 MaVi">2+/3 MaVi</option>
+        <option value="4/3 MaVi">4/3 MaVi</option>
+        <option value="6/6 Lu">6/6 Lu</option>
+        <option value="6/6 Ma">6/6 Ma</option>
+        <option value="6/6 Mi">6/6 Mi</option>
+        <option value="6/6 Ju">6/6 Ju</option>
+        <option value="6/6 Vi">6/6 Vi</option>
+      </select>
+      <br>
       <p>Horario Lab:</p>
-			<input type="text" name="laboratorio">
+      <select class="browser-default" name="laboratorio">
+				<option value="" disabled selected>Escoja el horario desado:</option>
+				<option value="N/A">N/A</option>
+        <option value="7/3 LuJu">7/3 LuJu</option>
+        <option value="8+/3 LuJu">8+/3 LuJu</option>
+        <option value="10/3 LuJu">10/3 LuJu</option>
+        <option value="11+/3 LuJu">11+/3 LuJu</option>
+        <option value="1/3 LuJu">1/3 LuJu</option>
+        <option value="2+/3 LuJu">2+/3 LuJu</option>
+        <option value="4/3 LuJu">4/3 LuJu</option>
+        <option value="7/3 MaVi">7/3 MaVi</option>
+        <option value="8+/3 MaVi">8+/3 MaVi</option>
+        <option value="10/3 MaVi">10/3 MaVi</option>
+        <option value="11+/3 MaVi">11+/3 MaVi</option>
+        <option value="1/3 MaVi">1/3 MaVi</option>
+        <option value="2+/3 MaVi">2+/3 MaVi</option>
+        <option value="4/3 MaVi">4/3 MaVi</option>
+        <option value="6/6 Lu">6/6 Lu</option>
+        <option value="6/6 Ma">6/6 Ma</option>
+        <option value="6/6 Mi">6/6 Mi</option>
+        <option value="6/6 Ju">6/6 Ju</option>
+        <option value="6/6 Vi">6/6 Vi</option>
+      </select>
+      <br>
       <p>Salón:</p>
-			<input type="text" name="salon">
-      <p>Profesor:</p>
-			<input type="text" name="profesor">
+      <select class="browser-default" name="salon">
+      	<option value="" disabled selected>Escoja el salon deseado:</option>
+        @foreach($salones as $salon)
+          <option value="{{$salon->numSalon}}">{{$salon->numSalon}}</option>
+        @endforeach
+      </select>
+      <br>
       <p>Responsabilidad:</p>
 			<input type="number" name="responsabilidad">
       <p>Inglés:</p>

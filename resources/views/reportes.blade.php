@@ -2,9 +2,24 @@
 
 {{-- Descomentar lo de abajo para agregar style especifico para cada view --}}
 {{-- @section('style')
-@endsection--}}
+@endsection --}}
 
 @section('content'){{--Abrimos la section para el contenido dentro del body, para el template--}}
+
+{{-- modal --}}
+<div id="myModal" class="modal" role="dialog">
+    <!-- Modal content-->
+    <div class="center-align">
+        <h4 class="modal-title" id="moTitulo"></h4>
+        <hr />
+    </div>
+    <div class="center-align" id="moBody">
+    </div>
+    <div class="right-align modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="modalC">Close</button>
+    </div>
+</div>
+
 <div class="container">
     <div class="row-fluid">
         <h1>Reportes</h1>
@@ -14,7 +29,7 @@
         <h3>Salones de Maestro</h3>
             <p>Nombre del maestro:</p>
             <select class="browser-default" id="maestro">
-                <option value="" disabled selected>Escoja el horario desado:</option>
+                <option value="" disabled selected>Escoja el maestro deseado:</option>
                 @foreach($maestros as $maestro)
                     <option value="{{$maestro->id}}">{{$maestro->nombre}}</option>
                 @endforeach
@@ -28,7 +43,7 @@
     <div class="row-fluid">
         <h3>Grupos de Materia</h3>
             <select class="browser-default" id="materia">
-                <option value="" disabled selected>Escoja el horario desado:</option>
+                <option value="" disabled selected>Escoja la materia deseada:</option>
                 @foreach($materias as $materia)
                     <option value="{{$materia->clave}}">{{$materia->nombre}}</option>
                 @endforeach
@@ -127,6 +142,7 @@
                 <option value="6/6 Ju">6/6 Ju</option>
                 <option value="6/6 Vi">6/6 Vi</option>
             </select>
+            <br>
             <button class="btn waves-effect waves-light" type="submit" name="action" onclick="profesorNoDisponibleEnHorario()">Submit<i class="material-icons right">send</i></button>
     </div>
     <br>
@@ -135,28 +151,14 @@
     <div class="row-fluid">
         <h3>Clases en Horario</h3>
             <p>Horario:</p>
-            <select class="browser-default" id="clases">
-                <option value="" disabled selected>Escoja el horario desado:</option>
-                <option value="7/3 LuJu">7/3 LuJu</option>
-                <option value="8+/3 LuJu">8+/3 LuJu</option>
-                <option value="10/3 LuJu">10/3 LuJu</option>
-                <option value="11+/3 LuJu">11+/3 LuJu</option>
-                <option value="1/3 LuJu">1/3 LuJu</option>
-                <option value="2+/3 LuJu">2+/3 LuJu</option>
-                <option value="4/3 LuJu">4/3 LuJu</option>
-                <option value="7/3 MaVi">7/3 MaVi</option>
-                <option value="8+/3 MaVi">8+/3 MaVi</option>
-                <option value="10/3 MaVi">10/3 MaVi</option>
-                <option value="11+/3 MaVi">11+/3 MaVi</option>
-                <option value="1/3 MaVi">1/3 MaVi</option>
-                <option value="2+/3 MaVi">2+/3 MaVi</option>
-                <option value="4/3 MaVi">4/3 MaVi</option>
-                <option value="6/6 Lu">6/6 Lu</option>
-                <option value="6/6 Ma">6/6 Ma</option>
-                <option value="6/6 Mi">6/6 Mi</option>
-                <option value="6/6 Ju">6/6 Ju</option>
-                <option value="6/6 Vi">6/6 Vi</option>
+            <select class="browser-default" id="salon">
+                <option value="" disabled selected>Escoja el salon deseado:</option>
+                @foreach($salones as $salon)
+                    <option value="{{$salon->numSalon}}">{{$salon->numSalon}}</option>
+                @endforeach
             </select>
+            <br>
+            <br>
             <button class="btn waves-effect waves-light" type="submit" name="action" onclick="claseEnHorario()">Submit<i class="material-icons right">send</i></button>
     </div>
     <br>

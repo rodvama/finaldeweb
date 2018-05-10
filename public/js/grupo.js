@@ -74,8 +74,8 @@ function subirGrupo(){//Para dar de alta maestro en la base de datos, mediante a
       var content = $(this).val();
       contenido[cont] = content;
       $(this).html(content);
-         $(this).contents().unwrap(); 
-         cont++;
+      $(this).contents().unwrap(); 
+      cont++;
     }); 
   
     var data = {
@@ -94,7 +94,7 @@ function subirGrupo(){//Para dar de alta maestro en la base de datos, mediante a
     $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
   
     $.ajax({
-        type: 'PUT',
+      type: 'PUT',
       url: '/grupos/actualizar/' + id,
       data: data,
       dataType: 'JSON',

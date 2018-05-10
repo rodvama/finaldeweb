@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\grupos;
+use App\salones;
+use App\maestro;
+use App\materias;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,8 +19,11 @@ class GruposController extends Controller
     public function index()
     {
     	$grupos = grupos::all();
+        $materias = materias::all();
+        $maestros = maestro::all();
+        $salones = salones::all();
 
-    	return view('grupos', compact('grupos'));
+    	return view('grupos', compact('grupos'), compact('materias'))->with(compact('maestros'))->with( compact('salones'));
     }
 
     public function guardar(Request $request)//recibimos info a guardar

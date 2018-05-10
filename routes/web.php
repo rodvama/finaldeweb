@@ -38,3 +38,9 @@ Route::delete('/grupos/eliminar/{grupo}', 'GruposController@eliminar');
 
 //Reportes
 Route::get('/reportes', 'ReportesController@index');
+Route::get('/reportes/maestro/{maestro}', 'ReportesController@salonesDeMaestro');
+Route::get('/reportes/materia/{materia}', 'ReportesController@gruposDeMateria');
+Route::get('/reportes/horario', 'ReportesController@salonEnHorario');
+Route::get('/reportes/disponible', 'ReportesController@profesorDisponibleEnHorario');
+Route::get('/reportes/ocupado', 'ReportesController@profesorNoDisponibleEnHorario');
+Route::get('/reportes/clases', 'ReportesController@claseEnHorario');

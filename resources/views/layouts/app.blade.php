@@ -33,14 +33,16 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li><a class="nav-link" href="{{ url('materias') }}">Materias</a></li>
-                        <li><a class="nav-link" href="{{ url('maestros') }}">Maestros</a></li>
-                        <li><a class="nav-link" href="{{ url('salones') }}">Salones</a></li>
-                        <li><a class="nav-link" href="{{ url('grupos') }}">Grupos</a></li>
-                        <li><a class="nav-link" href="{{ url('reportes') }}">Reportes</a></li>
-                    </ul>
+                    @if(Auth::check())
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav mr-auto">
+                            <li><a class="nav-link" href="{{ url('materias') }}">Materias</a></li>
+                            <li><a class="nav-link" href="{{ url('maestros') }}">Maestros</a></li>
+                            <li><a class="nav-link" href="{{ url('salones') }}">Salones</a></li>
+                            <li><a class="nav-link" href="{{ url('grupos') }}">Grupos</a></li>
+                            <li><a class="nav-link" href="{{ url('reportes') }}">Reportes</a></li>
+                        </ul>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

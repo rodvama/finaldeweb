@@ -21,6 +21,17 @@ class CreateMateriasTable extends Migration
             $table->string('laboratorio')->nullable()->comment('Horas de laboratorio');
             $table->timestamps();
         });
+        
+        $values = array(
+            array('clave' => 'TC1020', 'nombre' => 'Base de Datos', 'laboratorio' => ''),
+            array('clave' => 'TC1018', 'nombre' => 'Estructura de Datos', 'laboratorio' => ''),
+            array('clave' => 'TC2008', 'nombre' => 'Sistemas Operativos', 'laboratorio' => ''),
+            array('clave' => 'TC3041', 'nombre' => 'Base de datos avanzadas', 'laboratorio' => ''),
+            array('clave' => 'EM1005', 'nombre' => 'Emprendimiento', 'laboratorio' => ''), 
+            array('clave' => 'H1016', 'nombre' => 'Lengua extranjera', 'laboratorio' => '')
+        );
+
+        DB::table('materias')->insert($values);  
     }
 
     /**

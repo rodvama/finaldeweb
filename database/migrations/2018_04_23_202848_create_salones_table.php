@@ -21,8 +21,18 @@ class CreateSalonesTable extends Migration
             $table->string('admin')->comment('Que departamento lo administra');
             $table->timestamps();
         });
-    }
 
+         $values = array(
+            array('numSalon' => 'A4-245', 'capacidad' => 30, 'admin' => 'CS'),
+            array('numSalon' => 'A6-202', 'capacidad' => 20, 'admin' => 'CS'),
+            array('numSalon' => 'A2-103', 'capacidad' => 33, 'admin' => 'Escolar'),
+            array('numSalon' => 'A4-305', 'capacidad' => 45, 'admin' => 'Escolar'),
+            array('numSalon' => 'A2-204', 'capacidad' => 35, 'admin' => 'CS'),
+            array('numSalon' => 'A1-304', 'capacidad' => 45, 'admin' => 'Escolar')
+        );
+
+        DB::table('salones')->insert($values);  
+    }
     /**
      * Reverse the migrations.
      *

@@ -14,6 +14,7 @@ class AddFieldsToGruposTable extends Migration
     public function up()
     {
         Schema::table('grupos', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->string('clave');
             $table->integer('numGrupo')->unique();
             $table->string('horario');
